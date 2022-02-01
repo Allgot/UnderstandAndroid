@@ -1,5 +1,5 @@
 # UnderstandAndroid
 
-# Java Class Codes or XML Codes will be uploaded here.
+Java Class Codes or XML Codes will be uploaded here.
 
-# Visit dev-allgot.tistory.com
+Visit dev-allgot.tistory.com
