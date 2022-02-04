@@ -25,6 +25,7 @@ public class MenuActivity extends AppCompatActivity {
                 resIntent.putExtra("menu", 100);
 
                 setResult(RESULT_OK, resIntent);
+                finish();
             }
         });
 
@@ -35,6 +36,7 @@ public class MenuActivity extends AppCompatActivity {
                 resIntent.putExtra("menu", 200);
 
                 setResult(RESULT_OK, resIntent);
+                finish();
             }
         });
 
@@ -45,6 +47,7 @@ public class MenuActivity extends AppCompatActivity {
                 resIntent.putExtra("menu", 300);
 
                 setResult(RESULT_OK, resIntent);
+                finish();
             }
         });
     }
