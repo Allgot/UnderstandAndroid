@@ -1,0 +1,70 @@
+package dev_allgot.understand.navigation.doitmission_09;
+
+import android.app.DatePickerDialog;
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
+public class CustomerFragment extends Fragment {
+    EditText nameEdit;
+    EditText ageEdit;
+    EditText birthEdit;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_customer, container, false);
+
+        nameEdit = view.findViewById(R.id.nameEdit);
+        ageEdit = view.findViewById(R.id.ageEdit);
+        birthEdit = view.findViewById(R.id.birthEdit);
+
+        birthEdit.setText(new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Calendar.getInstance().getTime()));
+
+        birthEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar c = Calendar.getInstance();
+                DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        Calendar pickedDate = Calendar.getInstance();
+                        pickedDate.set(year, month, dayOfMonth);
+                        birthEdit.setText(new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(pickedDate.getTime()));
+                    }
+                };
+
+                new DatePickerDialog(getContext(), mDateSetListener, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DATE)).show();
+            }
+        });
+
+        Button saveButton = view.findViewById(R.id.saveButton);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nameString = "이름: " + nameEdit.getText().toString() + " | ";
+                String ageString = "나이: " + ageEdit.getText().toString() + " | ";
+                String birthString = "생년월일: " + birthEdit.getText().toString();
+
+                String msg = nameString + ageString + birthString;
+                Toast.makeText(getContext(), msg, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        return view;
+    }
+}
