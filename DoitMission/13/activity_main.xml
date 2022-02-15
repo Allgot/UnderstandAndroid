@@ -51,7 +51,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextDate"
+            android:id="@+id/birthEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
