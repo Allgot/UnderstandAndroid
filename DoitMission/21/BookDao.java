@@ -9,7 +9,7 @@ import androidx.room.Update;
 import java.util.ArrayList;
 
 @Dao
-public interface BookDAO {
+public interface BookDao {
     @Insert
     void insertBooks(ArrayList<Book> books);
 
