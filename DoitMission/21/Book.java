@@ -3,7 +3,7 @@ package dev_allgot.understand.doitmission_21;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "books")
 public class Book {
     @PrimaryKey
     public int bId;
