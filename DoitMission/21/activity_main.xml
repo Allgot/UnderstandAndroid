@@ -50,6 +50,7 @@
         android:layout_height="0dp"
         android:layout_margin="10dp"
         android:ems="10"
+        android:gravity="start|top"
         android:hint="@string/contents"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/saveButton"
