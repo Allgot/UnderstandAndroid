@@ -5,6 +5,12 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "books")
 public class Book {
+    public Book(String title, String author, String contents) {
+        this.title = title;
+        this.author = author;
+        this.contents = contents;
+    }
+    
     @PrimaryKey(autoGenerate = true)
     public int bId;
 
