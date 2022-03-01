@@ -1,0 +1,8 @@
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="200dp"
+    android:minHeight="100dp"
+    android:description="@string/location_widget_description"
+    android:previewImage="@drawable/location_widget_preview"
+    android:initialLayout="@layout/location_widget"
+    android:widgetCategory="home_screen"
+    android:resizeMode="horizontal|vertical" />
