@@ -66,28 +66,11 @@ public class MainActivity extends AppCompatActivity {
                     requestData.put("data", dataObj);
 
                     JSONArray idArray = new JSONArray();
-                    //idArray.put(0, "ewTiuDAJRJ6SnGY6Oh6K92:APA91bFYCPoh2ebCP_3WWjc8Nf5N1J0xObe_sgMWgo01dnuhRTUmrCAYUVR6ecEeclZbzdtslwkZRwCdv19TjrTLyhCa5B6JDNLXxb-V0WttWqK2AOwH2XBKjKvO--xplkP5tgJWf7Cm");
-                    //idArray.put(1, "{sample_id_2}");
-                    //requestData.put("registration_ids", idArray);
-                    requestData.put("to", "ewTiuDAJRJ6SnGY6Oh6K92:APA91bFYCPoh2ebCP_3WWjc8Nf5N1J0xObe_sgMWgo01dnuhRTUmrCAYUVR6ecEeclZbzdtslwkZRwCdv19TjrTLyhCa5B6JDNLXxb-V0WttWqK2AOwH2XBKjKvO--xplkP5tgJWf7Cm");
+                    idArray.put(0, "{sample_id_1}");
+                    idArray.put(1, "{sample_id_2}");
+                    requestData.put("registration_ids", idArray);
 
-                    JSONArray notificationArray = new JSONArray();
-                    requestData.put("title", "TEST_TITLE");
-                    requestData.put("body", "TEST_CONTENT");
-
-                    JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, "https://fcm.googleapis.com/fcm/send", requestData,
-                            new Response.Listener<JSONObject>() {
-                                @Override
-                                public void onResponse(JSONObject response) {
-                                    Log.d("Response?", response.toString());
-                                }
-                            },
-                            new Response.ErrorListener() {
-                                @Override
-                                public void onErrorResponse(VolleyError error) {
-                                    Log.e("Response Error", error.toString());
-                                }
-                            })
+                    JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, "https://fcm.googleapis.com/fcm/send", requestData, null, null)
                     {
                         @Override
                         protected Map<String, String> getParams() throws AuthFailureError {
@@ -97,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public Map<String, String> getHeaders() throws AuthFailureError {
                             Map<String, String> headers = new HashMap<String, String>();
-                            headers.put("Authorization", "key=AAAAYlwO2GE:APA91bGc4IKLS2DbT8nb9UNV5en-NDSndgGMQ_zyw7Tpab9tImu3HgEWf9qFt7OYl0MqX4pwwj4OUQ8JF3dPpH9OuYpTuXYELJZHAHzJMnFOf-mlwfoOUP373U4jw3y2tPktmqmKQYeA");
+                            headers.put("Authorization", "key={sample_server_key}");
 
                             return headers;
                         }
